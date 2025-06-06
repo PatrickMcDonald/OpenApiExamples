@@ -1,0 +1,23 @@
+@Swashbuckle.Api_HostAddress = https://localhost:7081
+
+GET {{Swashbuckle.Api_HostAddress}}/customers/
+Accept: application/json
+
+###
+
+@id=1
+GET {{Swashbuckle.Api_HostAddress}}/customers/{{id}}
+
+###
+
+POST {{Swashbuckle.Api_HostAddress}}/customers/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Jim Davis"
+}
+
+###
+
+GET {{Swashbuckle.Api_HostAddress}}/customers/error
