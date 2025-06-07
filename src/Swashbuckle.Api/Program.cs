@@ -44,7 +44,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(options =>
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "Swashbuckle API V1");
-        //options.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
     });
 
     app.MapScalarApiReference(options =>

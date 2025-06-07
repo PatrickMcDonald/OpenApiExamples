@@ -1,6 +1,23 @@
-@OpenApi_HostAddress = http://localhost:5180
+@OpenApi_HostAddress = https://localhost:7157
 
-GET {{OpenApi_HostAddress}}/weatherforecast/
+GET {{OpenApi_HostAddress}}/customers/
 Accept: application/json
 
 ###
+
+@id=1
+GET {{OpenApi_HostAddress}}/customers/{{id}}
+
+###
+
+POST {{OpenApi_HostAddress}}/customers/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Jim Davis"
+}
+
+###
+
+GET {{OpenApi_HostAddress}}/customers/error
