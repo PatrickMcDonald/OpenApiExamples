@@ -63,6 +63,12 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/scalar/", false);
+    return Task.CompletedTask;
+});
+
 app.MapControllers();
 
-app.Run();
+await app.RunAsync();
