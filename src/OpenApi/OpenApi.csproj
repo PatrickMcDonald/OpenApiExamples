@@ -23,6 +23,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="8.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OpenApiExamples.ServiceDefaults\OpenApiExamples.ServiceDefaults.csproj" />
+  </ItemGroup>
+
   <PropertyGroup Label="Enable generation of OpenAPI document file">
     <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
     <OpenApiGenerateDocuments>true</OpenApiGenerateDocuments>

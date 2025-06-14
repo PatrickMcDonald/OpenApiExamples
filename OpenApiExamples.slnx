@@ -3,5 +3,7 @@
     <File Path=".editorconfig" />
   </Folder>
   <Project Path="src/OpenApi/OpenApi.csproj" Id="f44b42b5-6998-43be-98ed-e7d5f6bab7f5" />
+  <Project Path="src/OpenApiExamples.AppHost/OpenApiExamples.AppHost.csproj" Id="a1b6f22d-d0cf-4030-8c8a-7deb2b2733ad" />
+  <Project Path="src/OpenApiExamples.ServiceDefaults/OpenApiExamples.ServiceDefaults.csproj" />
   <Project Path="src/Swashbuckle.Api/Swashbuckle.Api.csproj" Id="50d5702e-10dc-43f3-b6d4-4d728b60382a" />
 </Solution>

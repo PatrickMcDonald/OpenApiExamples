@@ -8,6 +8,8 @@ using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddServiceDefaults();
+
 // Add services to the container.
 builder.Services
     .AddControllers(options =>
@@ -68,6 +70,8 @@ app.MapGet("/", context =>
     context.Response.Redirect("/scalar/", false);
     return Task.CompletedTask;
 });
+
+app.MapDefaultEndpoints();
 
 app.MapControllers();
 
