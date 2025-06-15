@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 env:
-  IMAGE_TAG: openapi-demo:${{ github.run_number }}
+  IMAGE_TAG: patrickmcdonald/openapi-demo:${{ github.run_number }}
 
 jobs:
   build-and-push:
@@ -46,4 +46,4 @@ jobs:
           registryPassword: ${{ secrets.DOCKERHUB_TOKEN }}
           containerAppName: demo-openapi-container
           resourceGroup: azure-demos
-          imageToDeploy: hub.docker.com/repository/docker/patrickmcdonald/${{ env.IMAGE_TAG }}
+          imageToDeploy: hub.docker.com/repository/docker/${{ env.IMAGE_TAG }}
