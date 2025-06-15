@@ -37,8 +37,8 @@ jobs:
           appSourcePath: ${{ github.workspace }}
           _dockerfilePathKey_: _dockerfilePath_
           registryUrl: hub.docker.com
-          registryUsername: ${{ secrets.DEMOOPENAPICONTAINER_REGISTRY_USERNAME }}
-          registryPassword: ${{ secrets.DEMOOPENAPICONTAINER_REGISTRY_PASSWORD }}
+          registryUsername: ${{ secrets.DOCKERHUB_USERNAME }}
+          registryPassword: ${{ secrets.DOCKERHUB_TOKEN }}
           containerAppName: demo-openapi-container
           resourceGroup: azure-demos
           imageToBuild: hub.docker.com/demo-openapi-container:${{ github.sha }}
