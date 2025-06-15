@@ -48,9 +48,7 @@ jobs:
         uses: azure/container-apps-deploy-action@v2
         with:
           appSourcePath: ${{ github.workspace }}
-          registryUrl: hub.docker.com
-          registryUsername: ${{ secrets.DOCKERHUB_USERNAME }}
-          registryPassword: ${{ secrets.DOCKERHUB_TOKEN }}
+          registryUrl: docker.io
           containerAppName: demo-openapi-container
           resourceGroup: azure-demos
-          imageToDeploy: hub.docker.com/repository/docker/${{ env.IMAGE_TAG }}
+          imageToDeploy: docker.io/${{ env.IMAGE_TAG }}
