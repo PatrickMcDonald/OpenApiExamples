@@ -51,3 +51,5 @@ jobs:
           containerAppName: demo-openapi-container
           resourceGroup: azure-demos
           imageToDeploy: docker.io/${{ env.IMAGE_TAG }}
+          environmentVariables: |
+            PORT=8080
