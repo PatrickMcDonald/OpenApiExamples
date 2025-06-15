@@ -6,11 +6,12 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  IMAGE_TAG: openapi-demo:${{ github.run_number }}
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    env:
-      IMAGE_TAG: patrickmcdonald/openapi-demo:${{ github.run_number }}
     steps:
     - uses: actions/checkout@v4
     - name: Login to Docker Hub
@@ -25,3 +26,24 @@ jobs:
       env:
         DOCKER_BUILDKIT: 1
         IMAGE_TAG: ${{ env.IMAGE_TAG }}
+
+  deploy-to-azure:
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    steps:
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.DEMOOPENAPICONTAINER_AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.DEMOOPENAPICONTAINER_AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.DEMOOPENAPICONTAINER_AZURE_SUBSCRIPTION_ID }}
+      - name: Deploy to Azure Container App
+        uses: azure/container-apps-deploy-action@v2
+        with:
+          appSourcePath: ${{ github.workspace }}
+          registryUrl: hub.docker.com
+          registryUsername: ${{ secrets.DOCKERHUB_USERNAME }}
+          registryPassword: ${{ secrets.DOCKERHUB_TOKEN }}
+          containerAppName: demo-openapi-container
+          resourceGroup: azure-demos
+          imageToDeploy: hub.docker.com/repository/docker/patrickmcdonald/${{ env.IMAGE_TAG }}
