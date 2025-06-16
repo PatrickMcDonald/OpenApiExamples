@@ -49,8 +49,8 @@ jobs:
         uses: azure/container-apps-deploy-action@v2
         with:
           registryUrl: docker.io
-          containerAppName: demo-openapi-container
-          resourceGroup: azure-demos
+          containerAppName: openapi
+          resourceGroup: rg-OpenApiExamples
           imageToDeploy: docker.io/${{ env.IMAGE_TAG }}
           environmentVariables: |
-            PORT=8080
+            PORT=8081
