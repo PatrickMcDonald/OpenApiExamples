@@ -53,10 +53,11 @@ jobs:
           tenant-id: ${{ secrets.OPENAPI_AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.OPENAPI_AZURE_SUBSCRIPTION_ID }}
 
-      - name: Build and push container image to registry
+      - name: Deploy to Azure Container App
         uses: azure/container-apps-deploy-action@v2
         with:
           registryUrl: docker.io
           containerAppName: openapi
           resourceGroup: rg-OpenApiExamples
           imageToDeploy: ${{ env.IMAGE_TAG }}
+          targetPort: 8080
