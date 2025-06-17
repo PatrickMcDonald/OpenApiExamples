@@ -65,7 +65,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthorization();
 
-app.MapGet("/", () => "Welcome to the OpenAPI Example API!");
+app.MapGet("/", () => "Welcome to the OpenAPI Example API!")
+    .ExcludeFromDescription();
 
 app.MapDefaultEndpoints();
 
