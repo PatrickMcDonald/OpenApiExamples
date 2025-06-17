@@ -65,12 +65,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthorization();
 
-app.MapGet("/", context =>
-{
-    context.Response.Redirect("/scalar/", false);
-    return Task.CompletedTask;
-});
-
 app.MapDefaultEndpoints();
 
 app.MapControllers();
