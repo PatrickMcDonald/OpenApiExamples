@@ -61,8 +61,6 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-////app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapGet("/", () => "Welcome to the OpenAPI Example API!")
