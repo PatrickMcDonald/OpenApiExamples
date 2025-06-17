@@ -60,5 +60,4 @@ jobs:
           registryUrl: docker.io
           containerAppName: openapi
           resourceGroup: rg-OpenApiExamples
-          imageToDeploy: ${{ env.IMAGE_TAG }}
-          targetPort: 8080
+          imageToDeploy: docker.io/${{ env.IMAGE_TAG }}
