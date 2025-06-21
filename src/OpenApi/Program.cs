@@ -52,14 +52,16 @@ app.UseExceptionHandler("/error");
 
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    app.MapScalarApiReference();
-
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("openapi/v1.json", "Open API V1");
-    });
+    // Moved OpenAPI docs out of this if block to always enable them
 }
+
+app.MapOpenApi();
+app.MapScalarApiReference();
+
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("openapi/v1.json", "Open API V1");
+});
 
 app.UseAuthorization();
 
