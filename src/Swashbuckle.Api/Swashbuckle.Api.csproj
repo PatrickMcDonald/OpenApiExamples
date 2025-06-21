@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Scalar.AspNetCore" Version="2.4.13" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="8.1.4" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.3" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="8.1.4" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="8.1.4" />
+    <PackageReference Include="Scalar.AspNetCore" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" />
   </ItemGroup>
 
   <ItemGroup>
