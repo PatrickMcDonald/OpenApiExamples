@@ -60,7 +60,7 @@ app.MapScalarApiReference();
 
 app.UseSwaggerUI(options =>
 {
-    options.SwaggerEndpoint("openapi/v1.json", "Open API V1");
+    options.SwaggerEndpoint("/openapi/v1.json", "Open API V1");
 });
 
 app.UseAuthorization();
